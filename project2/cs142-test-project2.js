@@ -7,10 +7,10 @@
 
 // We assume these symbols will be globally defined by the user. These var statements
 // will assign undefined to the symbol if it isn't global already.
-// These global symbols are needed to test your file and you don't have to worry about them for Problem 3.
 var cs142MakeMultiFilter;
 var Cs142TemplateProcessor;
 
+var anon = function() {
 
 // Result message for Problems 1-3
 var p1Message = 'SUCCESS';
@@ -52,7 +52,7 @@ if (typeof cs142MakeMultiFilter !== 'function') {
         p1Message = 'FAILURE';
     } else {
         var result = filterFunc();
-        if (!arraysAreTheSame([1, 2, 3], result)) {
+        if (!arraysAreTheSame(originalArray, result)) {
             console.error('filter function with no args does not return the original array' , result);
             p1Message = 'FAILURE';
         }
@@ -66,7 +66,7 @@ if (typeof cs142MakeMultiFilter !== 'function') {
                 console.error('filter function callback does not filter 2 correctly' , callbackResult);
                 p1Message = 'FAILURE';
             }
-            if (!arraysAreTheSame([1, 2, 3], this)) {
+            if (!arraysAreTheSame(originalArray, this)) {
                 console.error('filter function callback does not pass original array as this' , this);
                 p1Message = 'FAILURE';
             }
@@ -100,10 +100,6 @@ if (typeof cs142MakeMultiFilter !== 'function') {
         }, function (callbackResult) {
             if (!arraysAreTheSame([2, 3, 4], callbackResult)) {
                 console.error('second filter does not filter 1 (check for global variable usage)' , callbackResult);
-                p1Message = 'FAILURE';
-            }
-            if (!arraysAreTheSame([1, 2, 3, 4], this)) {
-                console.error('filter function callback does not pass original array as this' , this);
                 p1Message = 'FAILURE';
             }
         });
@@ -164,3 +160,6 @@ window.onload = function () {
     document.getElementById("cs142p2").innerHTML = p2Message;
     document.getElementById("cs142p3").innerHTML = p3Message;
 };
+};
+
+anon();
