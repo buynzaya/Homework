@@ -1,0 +1,42 @@
+.tbl1 {
+	width: 100%;
+	background: black;
+	color: white;
+	
+}
+.h1 {
+	margin-top: -5px;
+	margin-bottom: -10px;
+	background: black;
+	text-align: center;
+	color: white;
+}
+.left {
+	text-align: left;
+}
+.center {
+	text-align: center;
+}
+.right {
+	text-align: right;
+}
+.tbl2 {
+	width: 100%;
+	background: yellow;
+	color: black;
+	table-layout: fixed;
+}
+.tbl3 {
+	width: 100%;
+	background: greenyellow;
+	color: black;
+	table-layout: fixed;
+}
+.gray {
+	text-align: center;
+	color: gray;
+}
+.black {
+	text-align: center;
+	color: black;
+}
